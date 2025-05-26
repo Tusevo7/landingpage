@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulmoScan - Detecção Inteligente de Tuberculose</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+         margin: 0; 
+         padding: 0; 
+         box-sizing: border-box; 
+    }
+
+    body { 
+
+     font-family: 'Inter', sans-serif;
+     background: #f9fbfc; 
+     color: #222; 
+    }
+    header { 
+        background: #00035bf9 ; 
+        color: #fff; 
+         display: flex;
+         flex-direction: row;
+          justify-content: space-around; 
+          align-items: center;
+         padding: 30px;
+         }
+    header h1 {
+     font-size: 24px;
+     }
+       header nav a { 
+            color: #fff; 
+            margin-left: 30px;
+            text-decoration: none; 
+            font-size: 15pt;
+            position: relative;
+        } 
+    .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center;
+    background-image: url(../landingpage/tela2r5.jpg);
+    background-size: cover;
+    background-position: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+ 
+    width: 100%;
+    margin: 0;
+}
+    .hero h2 { font-size: 36px; 
+        color: #ffffff; 
+        margin-bottom: 20px;
+        position: relative;
+        
+     }
+    .hero p { font-size: 18px; 
+        max-width: 600px;
+         margin: 0 auto; 
+        color: #ffffff;
+        position: relative;
+     
+     }
+        .cta-button {
+        padding: 16px 30px;
+        background: #ffffff;
+        border: none;
+        color: #0134a9;
+        font-size: 17px; 
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background 0.3s; 
+        position: relative;
+        font-weight: bolder;
+        }
+    .cta-button:hover {
+         background: #006d77; 
+         color: white;
+        }
+        /* Efeito de cursor piscando */
+.typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #ffffff;
+    animation: blink 0.7s infinite;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+    .upload-section { padding: 60px 40px; background: #fff; text-align: center; }
+    .upload-section input { padding: 10px; margin-top: 20px; }
+    #resultado { margin-top: 20px; font-size: 18px; color: #333; }
+    
+    .position { 
+        position: absolute;
+        top: 12em;
+        left: 8em;
+    }
+
+    .position h2 { font-size: 36px; 
+        color: #ffffff; 
+        margin-bottom: 20px;
+        position: relative;
+        
+     }
+   .position p { font-size: 18px; 
+        max-width: 600px;
+         margin: 0 auto; 
+        color: #ffffff;
+        position: relative;
+     
+     }
+
+      .position button { 
+        margin-top: 30px;
+     
+     }
+
+     .other{
+      display: none;
+     }
+
+     footer {
+      background: #00035bf9 ; 
+      color: white;
+      padding: 30px 15px;
+      position: relative;
+     }
+
+     footer section{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+     }
+
+     footer h2{
+      padding: 10px 0px;
+     }
+
+     footer ul{
+      list-style: none;
+     }
+
+
+     footer ul li a{
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      padding-top: 10px;
+     }
+
+     footer p{
+      width: 500px;
+       font-size: 12px;
+     }
+
+    .verOutros{
+      list-style: none;
+      height: 0;
+      display: none;
+    }
+     .maisImagem{
+      position: absolute;
+      display: none;
+      right: 0;
+    }
+
+    .linguas{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 20px;
+      display: none;
+    }
+    .linguas p{
+    width: 250px;
+    font-weight: 100;
+    }
+
+    select{
+      background: transparent;
+      color: white;
+      border: none;
+    }
+    .burguer{
+      display: none;
+    }
+ @media screen and (max-width:767px){
+    .linguas{
+      display: flex;
+    }
+   footer p{
+      width: 350px;
+     }
+     .hero {
+     height: 60vh;
+    }
+   footer {
+      background: #00035bf9 ; 
+      color: white;
+      padding: 20px 30px;
+     }
+
+       footer section{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+     }
+    .maisImagem{
+      position: absolute;
+      display: inline-block;
+      right: 0;
+    }
+
+    .girar.maisImagem{
+      transform: rotate(-180deg);
+       transition: all 0.3s ease;
+    }
+
+     .outro.maisImagem{
+      transform: rotate(0deg);
+       transition: all 0.3s ease;
+    }
+
+        .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center;
+        background-image: url(../landingpage/tela2r5.jpg);
+        background-size: cover;
+        background-position: right center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        padding-left: 20px; /* Ajuste conforme necessário */
+        width: 100%;
+        margin: 0;
+    }
+      nav { 
+        display: none;
+     }
+
+       header nav a{ 
+        color: black;
+        padding: 10px;
+        margin: 0px;
+        font-size: 17px;
+        border-top: 1px  solid #eee;
+        border-bottom: 1px  solid #eee;
+        width: 100%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+     }
+
+   .verOutros.activo{
+      display: block;
+       animation: animar .2s ease-in-out;
+       height: auto;
+    }
+
+      li {
+        padding: 10px 0px;
+      }
+
+     nav.activo{ 
+        height: auto;
+        padding: 20px;
+        width: 100%;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        padding-top: 20em;
+        padding-left: 15px;
+        color: black;
+         margin-top: 30px;
+         animation: animar .2s ease-in-out;
+     }
+
+     @keyframes animar {
+      from{
+          opacity: 0;
+          transform: translateX(30px);
+         }
+
+         to{
+          opacity: 1;
+          transform: translateX(0px);
+         }
+     }
+
+     header button{ 
+        display: none;
+     }
+
+     span{ 
+        content: '';
+        width: 20px;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        display: inline-block;
+        margin-bottom: 5px;
+         transition: all 0.3s ease;
+     }
+
+      .burguer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 3000;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+  }
+
+  .burguer p {
+    margin: 0 10px 0 0;
+  }
+
+  .linhas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0px;
+  }
+
+  .linhas span {
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3s ease;
+  }
+
+  .burguer.activo .linhas span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burguer.activo .linhas span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burguer.activo .linhas span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+       header { 
+        background: #00035bf9 ; 
+        color: #fff; 
+         display: flex;
+         flex-direction: row;
+          justify-content: space-between; 
+          align-items: center;
+         padding: 30px;
+         }
+
+         .position { 
+        position: absolute;
+        top: 20em;
+        left: auto;
+        text-align: center;
+    }
+
+    .other{
+      display: block;
+    }
+
+   
+
+  /* .motre.activo{ 
+        transform: rotate(90deg);
+        background-color: black;
+    } */ 
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PulmoScan</h1>
+    <nav>
+      <a href="#">Solução</a>
+      <a href="#upload" id="mostreOpcoes">Vendas <img class="maisImagem" src="arrow-down.svg" alt="mais"></a> 
+      <ul class="verOutros">
+        <li><a href="">Minaituras</a></li>
+        <li><a href="">Minaituras</a></li>
+        <li><a href="">Minaituras</a></li>
+      </ul>
+      <a href="#sobre">Preços</a>
+    </nav>
+
+     <div>
+         <button class="cta-button" onclick="document.getElementById('upload').scrollIntoView({ behavior: 'smooth' })">Comece Grátis</button>
+      </div>
+
+        <div class="burguer">
+      <p class="other">MENU</p>
+      <div class="linhas">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    
+  </section>
+
+ <section class="position">
+    <h2 id="typewriter-title"></h2> <!-- O texto será inserido dinamicamente -->
+    <p>A PulmoScan ajuda a detectar sinais de tuberculose em <br>exames de  raio-X de forma rápida, precisa e acessível.</p>
+    <button class="cta-button" onclick="document.getElementById('upload').scrollIntoView({ behavior: 'smooth' })">Comece Grátis</button>
+ </section>
+
+ <footer>
+
+  <section>
+      <div>
+      <h2>Solução</h2>
+      <p>O PulmoScan é uma plataforma digital que utiliza inteligencia artificial para analisar exames de raio-x do tórax e indicar em segundos se há suspeita de turbeculose ou não.</p>
+    </div>
+
+     <div>
+      <h2>Empresa</h2>
+      <ul>
+        <li><a href="#">Sobre nós</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="">Clientes</a></li>
+        <li><a href="">Parceiros</a></li>
+      </ul>
+    </div>
+
+     <div>
+      <h2>Planos</h2>
+      <ul>
+        <li><a href="#">Planos mensais</a></li>
+        <li><a href="#">Plano anual</a></li>
+        <li><a href="">Clientes</a></li>
+        <li><a href="">ONGs palno</a></li>
+      </ul>
+    </div>
+  </section>
+    
+  <div class="linguas">
+    <div>
+         <select name="" id="">
+      <option value="">Portugues</option>
+      <option value="">Ingles</option>
+      <option value="">Fransces</option>
+      <option value="">Espanhol</option>
+    </select>
+    </div>
+   
+
+     <div>
+    <p>Copyrigth &copy; 2025 PulmoScan <br> Todos os direitos reservados</p>
+  </div>
+  </div>
+
+ 
+ </footer>
+
+  <script type="module">
+    // Firebase Config
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getStorage, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js";
+
+    const firebaseConfig = {
+      apiKey: "SUA_API_KEY",
+      authDomain: "SUA_AUTH_DOMAIN",
+      projectId: "SEU_PROJECT_ID",
+      storageBucket: "SEU_BUCKET.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const storage = getStorage(app);
+
+    async function enviarImagem() {
+      const input = document.getElementById('imagem');
+      const resultado = document.getElementById('resultado');
+
+      if (!input.files.length) {
+        resultado.textContent = 'Por favor, selecione uma imagem.';
+        return;
+      }
+
+      const file = input.files[0];
+      resultado.textContent = 'Carregando e analisando...';
+
+      // Upload para Firebase
+      const storageRef = ref(storage, `raio-x/${file.name}`);
+      await uploadBytes(storageRef, file);
+
+      // Envia para API Flask local
+      const formData = new FormData();
+      formData.append('imagem', file);
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/upload', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+        if (data.resultado) {
+          resultado.innerHTML = `<strong>Resultado:</strong> ${data.resultado}`;
+        } else {
+          resultado.textContent = 'Erro ao processar imagem.';
+        }
+      } catch (error) {
+        resultado.textContent = 'Erro ao conectar com o servidor.';
+      }
+    }
+    const palavras = ["Resultados Rápidos", "Diagnóstico Preciso", "Tecnologia Avançada"];
+    const elementoH2 = document.getElementById('typewriter-title');
+    let palavraAtual = 0;
+    let caractereAtual = 0;
+    let estaApagando = false;
+    let velocidadeEscrita = 100;
+    let tempoEntrePalavras = 2000;
+    let cursorVisivel = true;
+
+    // Efeito de cursor piscante
+    function piscarCursor() {
+        cursorVisivel = !cursorVisivel;
+        atualizarCursor();
+        setTimeout(piscarCursor, 500); // Velocidade do piscar
+    }
+
+    function atualizarCursor() {
+        const textoAtual = palavras[palavraAtual].substring(0, caractereAtual);
+        elementoH2.innerHTML = textoAtual + (cursorVisivel ? '<span class="cursor">|</span>' : '');
+    }
+
+    function typeWriterEffect() {
+        const textoAtual = palavras[palavraAtual];
+        
+        if (!estaApagando) {
+            // Escrevendo
+            caractereAtual++;
+            atualizarCursor();
+            
+            if (caractereAtual === textoAtual.length) {
+                estaApagando = true;
+                setTimeout(typeWriterEffect, tempoEntrePalavras);
+                return;
+            }
+        } else {
+            // Apagando
+            caractereAtual--;
+            atualizarCursor();
+            
+            if (caractereAtual === 0) {
+                estaApagando = false;
+                palavraAtual = (palavraAtual + 1) % palavras.length;
+            }
+        }
+        
+        setTimeout(typeWriterEffect, estaApagando ? velocidadeEscrita / 2 : velocidadeEscrita);
+    }
+
+    // Inicia os efeitos
+    document.addEventListener('DOMContentLoaded', () => {
+        typeWriterEffect();
+        piscarCursor();
+    });
+
+    const nav = document.querySelector("nav")
+    const burguer = document.querySelector(".burguer")
+
+      function mostre() {
+        burguer.classList.toggle("activo")
+        nav.classList.toggle("activo") 
+
+      }
+      burguer.addEventListener("click", mostre)
+
+      const mostreOpcoes = document.querySelector('#mostreOpcoes')
+      const verOutros = document.querySelector('.verOutros')
+      const maisImagem = document.querySelector('.maisImagem')
+
+      
+      function verMais(){
+        const activo =   verOutros.classList.toggle('activo')
+
+        if(activo){
+          maisImagem.classList.toggle('girar')
+          maisImagem.style.transform.rotate = '-180deg';
+        }else{
+          maisImagem.classList.toggle('outro')
+          maisImagem.style.transform.rotate = '0deg';
+        }
+      }
+
+      mostreOpcoes.addEventListener('click', verMais)
+</script>
+
+<style>
+    .cursor {
+        color: #ffffff;
+        animation: piscar 0.7s infinite;
+    }
+    @keyframes piscar {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+</style>
+</body>
+</html>
