@@ -415,16 +415,26 @@ Fibrose pulmonar
     </nav>
 
      <div>
-   <button class="cta-button" onclick="executarAcoes()">Comece Grátis</button>
+<button class="cta-button" onclick="executarAcoes()">Comece Grátis</button>
 
 <script>
   function executarAcoes() {
-    document.getElementById('upload').scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => {
+    // Scroll suave até o elemento com ID 'upload'
+    const destino = document.getElementById('upload');
+    if (destino) {
+      destino.scrollIntoView({ behavior: 'smooth' });
+
+      // Abre o link após um pequeno atraso para permitir o scroll
+      setTimeout(() => {
+        window.open('https://forms.gle/vPqPQzB4ooQm6eec8', '_blank');
+      }, 1000); // 1 segundo de espera
+    } else {
+      // Caso o ID 'upload' não exista, só abre o formulário
       window.open('https://forms.gle/vPqPQzB4ooQm6eec8', '_blank');
-    }, 800); // Espera 0.8s para garantir que o scroll aconteça
+    }
   }
 </script>
+
 
 
 
@@ -447,16 +457,26 @@ Fibrose pulmonar
  <section class="position">
     <h2 id="typewriter-title"></h2> <!-- O texto será inserido dinamicamente -->
     <p>A PulmoScan ajuda a detectar sinais de tuberculose em <br>exames de  raio-X de forma rápida, precisa e acessível.</p>
-  <button class="cta-button" onclick="executarAcoes()">Comece Grátis</button>
+<button class="cta-button" onclick="executarAcoes()">Comece Grátis</button>
 
 <script>
   function executarAcoes() {
-    document.getElementById('upload').scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => {
+    // Scroll suave até o elemento com ID 'upload'
+    const destino = document.getElementById('upload');
+    if (destino) {
+      destino.scrollIntoView({ behavior: 'smooth' });
+
+      // Abre o link após um pequeno atraso para permitir o scroll
+      setTimeout(() => {
+        window.open('https://forms.gle/vPqPQzB4ooQm6eec8', '_blank');
+      }, 1000); // 1 segundo de espera
+    } else {
+      // Caso o ID 'upload' não exista, só abre o formulário
       window.open('https://forms.gle/vPqPQzB4ooQm6eec8', '_blank');
-    }, 800); // Espera 0.8s para garantir que o scroll aconteça
+    }
   }
 </script>
+
 
 
  </section>
